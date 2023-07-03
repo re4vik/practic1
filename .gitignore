@@ -22,6 +22,5 @@ int main() {
     
     // Виведення даних
     printf("\nTime summary: %.2f hours\n", summary_time);
-    
-    return 0;
+
 }
