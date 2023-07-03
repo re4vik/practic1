@@ -1,52 +1,25 @@
-# Prerequisites
-*.d
+#include <stdio.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+int main() {
+    // Оголошення змінних (час за який гості з'їдять пиріг)
+    int t[3];
+    
+    // Введення даних користувачем
+    for (int i = 0; i < 3; i++) {
+        printf("Enter information regarding the  guest %d (not more than 10000):\n", i+1);
+        scanf("%d", &t[i]);
+        // Перевірка чи задовільняють дані умову
+        if (t[i] > 10000) {
+            printf("Wrong number");
+            return 0;
+        }
+    }
+    
+    // Оголошення змінної (загальний час), підрахунок загального часу і представлення його в годинах
+    float summary_time = 1.0 / ((1.0 / t[0]) + (1.0 / t[1]) + (1.0 / t[2]));
+    
+    // Виведення даних
+    printf("\nTime summary: %.2f hours\n", summary_time);
+    
+    return 0;
+}
